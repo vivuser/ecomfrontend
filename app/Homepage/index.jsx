@@ -1,7 +1,7 @@
+"use client"
 import Shop from "../shop";
 
-export default function ShopPage(props) {
-
+export default function Homepage(props) {
 
     return (
         <Shop {...props}/>

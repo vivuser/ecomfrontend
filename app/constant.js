@@ -10,7 +10,8 @@ export const products = [
     "release_date": "7/11/2014",
     "rating": 2.9,
     "color": "Fuscia",
-    "size": "medium"
+    "size": "medium",
+    "webcategorySlug": "electronics"
   },
   {
     "id": 2,
@@ -23,7 +24,8 @@ export const products = [
     "release_date": "11/27/2017",
     "rating": 3.9,
     "color": "Violet",
-    "size": "medium"
+    "size": "medium",
+    "webcategorySlug": "home-goods"
   },
   {
     "id": 3,
@@ -36,7 +38,8 @@ export const products = [
     "release_date": "6/12/2010",
     "rating": 3.3,
     "color": "Purple",
-    "size": "small"
+    "size": "small",
+    "webcategorySlug": "supplements"
   },
   {
     "id": 4,
@@ -49,7 +52,8 @@ export const products = [
     "release_date": "2/24/2014",
     "rating": 2.0,
     "color": "Purple",
-    "size": "small"
+    "size": "small",
+    "webcategorySlug": "home-goods"
   },
   {
     "id": 5,
@@ -62,7 +66,8 @@ export const products = [
     "release_date": "10/13/2019",
     "rating": 3.4,
     "color": "Teal",
-    "size": "small"
+    "size": "small",
+    "webcategorySlug": "growth"
   },
   {
     "id": 6,
@@ -75,7 +80,8 @@ export const products = [
     "release_date": "5/16/2013",
     "rating": 1.6,
     "color": "Crimson",
-    "size": "small"
+    "size": "small",
+    "webcategorySlug": "home-goods"
   },
   {
     "id": 7,
@@ -88,7 +94,8 @@ export const products = [
     "release_date": "2/8/2012",
     "rating": 1.9,
     "color": "Purple",
-    "size": "extra large"
+    "size": "extra large",
+    "webcategorySlug": "growth"
   },
   {
     "id": 8,
@@ -101,7 +108,8 @@ export const products = [
     "release_date": "12/15/2015",
     "rating": 2.2,
     "color": "Goldenrod",
-    "size": "extra large"
+    "size": "extra large",
+    "webcategorySlug": "clothing"
   },
   {
     "id": 9,
@@ -114,7 +122,8 @@ export const products = [
     "release_date": "7/20/2021",
     "rating": 3.4,
     "color": "Mauv",
-    "size": "large"
+    "size": "large",
+    "webcategorySlug": "beauty"
   },
   {
     "id": 10,
@@ -127,7 +136,8 @@ export const products = [
     "release_date": "7/28/2015",
     "rating": 3.9,
     "color": "Crimson",
-    "size": "large"
+    "size": "large",
+    "webcategorySlug": "beauty"
   },
   {
     "id": 11,
@@ -140,7 +150,8 @@ export const products = [
     "release_date": "9/6/2013",
     "rating": 2.0,
     "color": "Blue",
-    "size": "extra large"
+    "size": "extra large",
+    "webcategorySlug": "electronics"
   },
   {
     "id": 12,
@@ -153,7 +164,8 @@ export const products = [
     "release_date": "9/23/2020",
     "rating": 4.6,
     "color": "Red",
-    "size": "large"
+    "size": "large",
+    "webcategorySlug": "clothing"
   },
   {
     "id": 13,
@@ -166,7 +178,8 @@ export const products = [
     "release_date": "1/9/2011",
     "rating": 4.5,
     "color": "Green",
-    "size": "large"
+    "size": "large",
+    "webcategorySlug": "clothing"
   },
   {
     "id": 14,
@@ -176,6 +189,7 @@ export const products = [
     "category": "electronics",
     "brand": "Coxwire",
     "description": "Curabitur pretium, neque a condimentum mollis, orci lectus faucibus ante, at suscipit lorem eros ac erat. Aenean at risus id ligula vestibulum scelerisque.",
+    "webcategorySlug": "electronics"
   },
   {
     "id": 15,
@@ -188,7 +202,8 @@ export const products = [
     "release_date": "7/28/2015",
     "rating": 3.9,
     "color": "Crimson",
-    "size": "large"
+    "size": "large",
+    "webcategorySlug": "beauty"
   },
   {
     "id": 16,
@@ -201,7 +216,8 @@ export const products = [
     "release_date": "9/6/2013",
     "rating": 2.0,
     "color": "Blue",
-    "size": "extra large"
+    "size": "extra large",
+    "webcategorySlug": "electronics"
   },
   {
     "id": 17,
@@ -214,7 +230,8 @@ export const products = [
     "release_date": "9/23/2020",
     "rating": 4.6,
     "color": "Red",
-    "size": "large"
+    "size": "large",
+    "webcategorySlug": "clothing"
   },
   {
     "id": 18,
@@ -227,15 +244,57 @@ export const products = [
     "release_date": "1/9/2011",
     "rating": 4.5,
     "color": "Green",
-    "size": "large"
+    "size": "large",
+    "webcategorySlug": "clothing"
   },
   {
     "id": 19,
     "product_name": "Revitalize",
     "price": 255.65,
     "quantity": 42,
-    "category": "electronics",
+    "category": "elronics",
     "brand": "Coxwire",
     "description": "Curabitur pretium, neque a condimentum mollis, orci lectus faucibus ante, at suscipit lorem eros ac erat. Aenean at risus id ligula vestibulum scelerisque.",
+    "webcategorySlug": "elronics"
+  },
+  {
+    "id": 19,
+    "product_name": "Revitalize",
+    "price": 255.65,
+    "quantity": 42,
+    "category": "elronics",
+    "brand": "Coxwire",
+    "description": "Curabitur pretium, neque a condimentum mollis, orci lectus faucibus ante, at suscipit lorem eros ac erat. Aenean at risus id ligula vestibulum scelerisque.",
+    "webcategorySlug": "elronics"
+  },
+  {
+    "id": 19,
+    "product_name": "Revitalize",
+    "price": 255.65,
+    "quantity": 42,
+    "category": "ronics",
+    "brand": "Coxwire",
+    "description": "Curabitur pretium, neque a condimentum mollis, orci lectus faucibus ante, at suscipit lorem eros ac erat. Aenean at risus id ligula vestibulum scelerisque.",
+    "webcategorySlug": "ronics"
+  },
+  {
+    "id": 19,
+    "product_name": "Revitalize",
+    "price": 255.65,
+    "quantity": 42,
+    "category": "electros",
+    "brand": "Coxwire",
+    "description": "Curabitur pretium, neque a condimentum mollis, orci lectus faucibus ante, at suscipit lorem eros ac erat. Aenean at risus id ligula vestibulum scelerisque.",
+    "webcategorySlug": "electros"
+  },
+  {
+    "id": 19,
+    "product_name": "Revitalize",
+    "price": 255.65,
+    "quantity": 42,
+    "category": "elect",
+    "brand": "Coxwire",
+    "description": "Curabitur pretium, neque a condimentum mollis, orci lectus faucibus ante, at suscipit lorem eros ac erat. Aenean at risus id ligula vestibulum scelerisque.",
+    "webcategorySlug": "elect"
   }
 ]
