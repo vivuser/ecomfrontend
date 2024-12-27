@@ -7,7 +7,7 @@ const layout = ({children}) => {
   return (
     <div className='m-10'>
       <CategorySliders />
-      <BasicSelect />
+      {/* <BasicSelect /> */}
       {children}
     </div>
   )

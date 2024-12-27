@@ -17,15 +17,14 @@ const ProductsPerPage = 15; // Number of products to display per page
 
 let initialFilters = {
   term:"",
-  sort: {
-      sortBy: ["lth", "htl"]
-  }
+  sortBy: "highToLow"
 }
 
 const Shop = (props) => {
   const { serverProps } = props;
   const { params: query = {} } = serverProps || {}
-  console.log(query, 'xxx')
+  
+  console.log(props, 'xxx')
   const [currentPage, setCurrentPage] = useState(0);
   const [products, setProducts] = useState([])
   const [visibleProducts, setVisibleProducts] = useState([]);
@@ -37,19 +36,19 @@ const Shop = (props) => {
   const [filters, setFilters] = useState({ ...initialFilters })
   const pathname = usePathname();
 
+
   const lastVisitedProductRef = useRef(null);
 
   useEffect(() => {
-    dispatch(fetchAllProducts({ filters: initialFilters})).unwrap().then(res => {
+    dispatch(fetchAllProducts({ ...filters })).unwrap().then(res => {
       setProducts(res.data.products)
     })
-  }, [])
+  }, [filters])
 
   useEffect(() => {
     setVisibleProducts(products.slice(0, ProductsPerPage));
   }, [products])
 
-  console.log(visibleProducts, 'vvv')
 
   // Function to load the next page
   const loadMore = debounce (() => {
@@ -108,26 +107,13 @@ const Shop = (props) => {
     }
 
     useEffect(() => {
-      if (query.type) {
-        console.log('innnnnnnnnnnnnnnnnnnnnnnn')
         let tempFilter = { ...filters}
         const params = new URLSearchParams();
         params.set('term', tempFilter?.term)
-        params.set('sort', tempFilter?.sort.sortBy[0])
+        params.set('sort', tempFilter?.sortBy)
         const newParams = params.toString();
         router.replace(`${pathname}?${newParams}`)
-      }
     },[filters, query.type])
-
-    useEffect(() => {
-      const { term = "sss", sort={}} = query
-      console.log(term, 'new query')
-      setFilters({
-        ...filters, term: term, 
-      })
-
-    },[])
-
 
 
     useEffect(() => {
@@ -146,6 +132,13 @@ const Shop = (props) => {
       }
     },[visibleProducts]);
 
+
+    console.log(filters.sortBy, 'sort by')
+
+
+    const handleFilterChange = (newFilterValue) => {
+      setFilters({ ...filters, sortBy: newFilterValue});
+    }
 
   return (
     <>
@@ -178,6 +171,7 @@ const Shop = (props) => {
           <h4 key={index} className='font-bold m-2 mx-6 bg-yellow-200 px-4'>{slot}</h4>
         ))}
       </Stack>
+      <BasicSelect filterValue={filters.sortBy} onFilterChange={handleFilterChange}/>
       {/* <img src={width <= 767 ? "/images/grid-top.jpg" : "/images/grid-top.jpg"} alt="Easy Sign Up" /> */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 p-4 m-10">
         {visibleProducts.map((item, index) => (
