@@ -32,6 +32,24 @@ body {
   align-items: center;
   background-color: #f5f5f5;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .carousel-card {
+    width: 100%;  /* Make the card take up full width on mobile */
+    height: auto;  /* Allow the height to adjust automatically */
+    margin: 10px 0;  /* Reduce the margin on mobile and space out the cards vertically */
+    padding: 8px;  /* Slightly reduced padding for mobile */
+  }
+}
+
+.carousel-card img {
+  width: 100%;
+  height: auto;  /* Adjust image height based on width */
+  object-fit: cover;
+  border-radius: 8px;  /* Rounded corners */
+  margin-bottom: 12px;  /* Space below the image */
 }
 
 .carousel-card h3 {
