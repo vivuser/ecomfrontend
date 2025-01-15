@@ -1,5 +1,5 @@
 "use client"
-import { Button, Stack } from '@mui/material'
+import { Button, Card, Stack } from '@mui/material'
 import { useRouter } from 'next/navigation'
 import React from 'react'
 import { useSelector } from 'react-redux'
@@ -34,20 +34,27 @@ const handleCheckout=()=>{
 }
 
   return (
-    <div className='items-center h-96'>
+    <div className='items-center h-96 justify-center'>
       <h2 className='text-2xl m-2 text-center'>Checkout page</h2>
+      <Card className="p-4 border rounded-lg shadow-md max-w-6xl">
       {
         checkoutProductArray.map(item => (
-          <Stack direction="row" className='gap-20 justify-center'>
-          <Stack direction="column">
+           <div key={item._id} className="flex justify-between items-center mb-4">
           <p>{item.product.name}</p>
-          <p>{item.product.price}</p>
-          </Stack>
+          <p>${item.product.price}</p>
           <p>{item.quantity}</p>
-          </Stack>
+          <p></p>
+          </div>
         ))
       }
-      <p className='font-bold text-xl text-center m-10'>Total: ${total}</p>
+          </Card>
+
+      <p className='font-bold text-xl text-center m-10'>Total: ${total.toFixed(2)}</p>
+
+      <div>
+        <p>Select Slot</p>
+        
+      </div>
 
       <Stack direction="row" className='items-center gap-4 flex justify-center'>
       Pay using 

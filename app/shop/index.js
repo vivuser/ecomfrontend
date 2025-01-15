@@ -99,7 +99,7 @@ const Shop = (props) => {
         <Stack direction="row" className='justify-center items-center mb-4'>
           Available Slots
           {["2-3", "4-5", "9-10"].map((slot, index) => (
-            <h4 key={index} className='font-bold m-2 mx-6 bg-yellow-200 px-4'>{slot}</h4>
+            <h4 key={index} className='font-bold m-2 mx-6 bg-yellow-200 px-4 border-black border-t-2'>{slot}</h4>
           ))}
         </Stack>
 

@@ -8,7 +8,7 @@ import { Mousewheel, FreeMode, Autoplay } from 'swiper/modules';
 
 const options = {
   loop: false,
-  arrows: false,
+  // arrows: false,
   pagination: false,
   spaceBetween: 0,
   slidesPerView: 3,

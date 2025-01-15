@@ -17,6 +17,9 @@ const CategorySliders = () => {
     ...new Set(products.map(item => item)),
   ]); // Extract unique categories from products
 
+  const [selectedCategoryHighlight, setSelectedCategoryHighlight] = useState("")
+
+
   console.log(category, 'oooo')
 
   const getCategoryImage = (category) => {
@@ -55,6 +58,7 @@ const CategorySliders = () => {
 
   const handleCategoryRedirect = (categorySlug) => {
         router.push(`/shop/${categorySlug}`)
+        setSelectedCategoryHighlight(categorySlug)
   }
 
   return (
@@ -63,8 +67,22 @@ const CategorySliders = () => {
       {category.map((cat, index) => (
     <div key={index} style={{ width: '250px', margin: '20px' }}>
        <SwiperSlide key={index}>
-            <div style={{ textAlign: 'center' }} onClick={() => handleCategoryRedirect(cat.webcategorySlug)}>
+            <div onClick={() => handleCategoryRedirect(cat.webcategorySlug)}
+               style={{
+                display: 'flex', // Apply flexbox layout
+                flexDirection: 'column', // Stack image and text vertically
+                justifyContent: 'center', // Center horizontally
+                alignItems: 'center', // Center vertically
+                textAlign: 'center', // Center the text
+                height: '150px', // Ensure the wrapper has enough height to center content
+                width: '80%', // Use the full width of the container
+                cursor: 'pointer',
+                padding: '10px', // Add some padding for better spacing
+              }} 
+              className={`cursor-pointer ${selectedCategoryHighlight === cat.webcategorySlug ? 'bg-yellow-200 w-40 h-40 rounded-lg' : ''}`} 
+              >
             <img 
+            className='cursor-pointer'
               src={getCategoryImage(cat.category)} 
               alt={cat.category} 
               style={{ 
@@ -75,7 +93,7 @@ const CategorySliders = () => {
                 margin: '0 auto',  // Center the image
               }} 
             />
-            <h3>{cat.category}</h3>
+            <h3 className='cursor-pointer'>{cat.category}</h3>
           </div>
         </SwiperSlide>
         </div>
